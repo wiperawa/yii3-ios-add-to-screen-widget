@@ -38,28 +38,14 @@ Here is the Widget usage example, with DEFAULT parameters, if you dont want to c
 use wiperawa\pwa\IosAddToScreen\AddToScreenWidget;
 
 //...
-
-AddToScreenWidget::widget([
-    'containerOptions' => [], 
-
-    //Brand img url, should not be bigger than 48x48 px.
-    'brandImg' => "@iosWidgetAssetUrl/img/brand-yii.png",
-
-    // welcome text
-    'welcomeText' => 'Install @appName on your IPhone: ',
-
-    //instruction text
-    'instructionText' => "push @iosShareImg and then @iosAddImg to screen 'Home'",
-
-    //seconds, hide cookie lifetime, defaults to 1 year
-    'cookieLifeTime' => 31536000,
-    
-    //iOS 'share' button img.
-    'iosShareImg' => "@iosWidgetAssetUrl/img/ios-share.svg",
-
-    //iOS 'add' button img
-    'iosAddImg' => "@iosWidgetAssetUrl/img/ios-add.svg"
-]);
+AddToScreenWidget::widget()
+    ->widthContainerOptions([])
+    ->withBrandImg("@iosWidgetAssetUrl/img/brand-yii.png") // //Brand img url, should not be bigger than 48x48 px.
+    ->withWelcomeText("Install @appName on your IPhone: ")
+    ->withInstructionText("push @iosShareImg and then @iosAddImg to screen 'Home'")
+    ->withCookieLifeTime(31536000)  //seconds, hide cookie lifetime, defaults to 1 year
+    ->withIosShareImg("@iosWidgetAssetUrl/img/ios-share.svg")  //iOS 'share' button img.
+    ->withIosAddImg("@iosWidgetAssetUrl/img/ios-add.svg"); //iOS 'add' button img
 
 ```
 
